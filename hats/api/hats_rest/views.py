@@ -2,9 +2,8 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-from hats.api.common.json import ModelEncoder
-from hats.api.hats_rest.models import Hat, LocationVO
-
+from common.json import ModelEncoder
+from .models import Hat, LocationVO
 
 class LocationVOEncoder(ModelEncoder):
     model = LocationVO
