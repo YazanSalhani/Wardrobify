@@ -4,6 +4,8 @@ Team:
 
 * Person 1 - Which microservice?
 * Yazan Salhani - Hats microservice
+* Miranda - Shoes Microservice
+* Person 2 - Which microservice?
 
 ## Design
 
