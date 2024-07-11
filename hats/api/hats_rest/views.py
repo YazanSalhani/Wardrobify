@@ -17,6 +17,7 @@ class HatsEncoder(ModelEncoder):
         "color",
         "picture_url",
         "location",
+        "id",
     ]
     encoders = {
         "location": LocationVOEncoder(),
