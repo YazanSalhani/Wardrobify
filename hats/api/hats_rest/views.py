@@ -55,9 +55,6 @@ def api_hats(request, location_vo_id=None):
             encoder=HatsEncoder,
             safe=False,
         )
-    ##user input id or href
-    ##find locationvo object to match
-    ##in json reassign the location key to be a locationvo object
 
 
 @require_http_methods(["DELETE", "GET"])
