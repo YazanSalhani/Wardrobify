@@ -12,7 +12,17 @@ class BinVODetailEncoder(ModelEncoder):
 
 class ShoeListEncoder(ModelEncoder):
     model = Shoes
-    properties = ["model_name"]
+    properties = [
+        "manufacturer",
+        "model_name",
+        "color",
+        "picture_url",
+        "bin",
+        "id",
+    ]
+    encoders = {
+        "bin": BinVODetailEncoder(),
+    }
 
 
 class ShoeDetailEncoder(ModelEncoder):
@@ -43,12 +53,10 @@ def shoe_list(request, bin_vo_id=None):
         )
     else:
         content = json.loads(request.body)
-        print("It loaded")
         try:
             bin_href = content["bin"]
             bin = BinVO.objects.get(import_href=bin_href)
             content["bin"] = bin
-            print("I've gotten the shoes!")
         except BinVO.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid Bin Id"},
