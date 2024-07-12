@@ -18,13 +18,10 @@ def poll():
         try:
             response = requests.get("http://wardrobe-api:8000/api/bins/")
             content = json.loads(response.content)
-            if response.ok:
-                for bin in content["bins"]:
-                    BinVO.objects.update_or_create(
-                        import_href=bin["href"],
-                    )
-            else:
-                print("Failed polling")
+            for bin in content["bins"]:
+                BinVO.objects.update_or_create(
+                    import_href=bin["href"],
+                )
         except Exception as e:
             print(e, file=sys.stderr)
         time.sleep(30)
@@ -32,5 +29,3 @@ def poll():
 
 if __name__ == "__main__":
     poll()
-
-                    # defaults={"import_href": bin["href"]}
