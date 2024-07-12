@@ -2,8 +2,8 @@
 
 Team:
 
-* Yazan Salhani - Hats microservice
-* Miranda Pedersen- Shoes Microservice
+* **Yazan Salhani** - Hats microservice
+* **Miranda Pedersen**- Shoes Microservice
 
 ## Design
 ![An excalidraw gragh to show the architecture of the project](image.png)
