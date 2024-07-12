@@ -37,10 +37,10 @@ return (
   <div className="col">
     {shoes.length == 0 ?
     <>
-      <h1 className="text-center mt-5">"NO SHOES!!"</h1>
-      <p className="text-center mt-5">Click the button below to add a shoe</p>
+      <h1 className="text-center mt-5">There's no shoes to be displayed</h1>
+      <p className="text-center mt-5">Click below to add a shoe</p>
       <div className="text-center">
-        <Link className="text-center mt-5 btn btn-primary" to="/shoes/new">Create shoe</Link>
+        <Link className="text-center btn btn-primary" to="/shoes/new">Create shoe</Link>
       </div>
     </> : shoes.map((shoe, idx) => {
       return (

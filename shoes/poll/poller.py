@@ -29,5 +29,3 @@ def poll():
 
 if __name__ == "__main__":
     poll()
-
-                    # defaults={"import_href": bin["href"]}
