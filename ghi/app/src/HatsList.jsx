@@ -45,9 +45,9 @@ function HatsList(){
             {hats.length == 0 ?
             <>
                 <h1 className="text-center mt-5">"NO HATS!!"</h1>
-                <p className="text-center mt-5">Click the button below to add a HAT</p>
+                <p className="text-center mt-5">Click the button below to add a hat</p>
                 <div className="text-center">
-                    <Link className="text-center mt-5 btn btn-primary" to="/hats/new">Create HAT</Link>
+                    <Link className="text-center mt-5 btn btn-primary" to="/hats/new">Create hat</Link>
                 </div>
             </> : hats.map((hat) => {
                     return (
