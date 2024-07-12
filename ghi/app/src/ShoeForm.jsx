@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ShoeForm() {
   const [bins, setBins] = useState([]);
@@ -43,6 +44,8 @@ function ShoeForm() {
     setBin(value);
   }
 
+  const navigator = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -71,6 +74,7 @@ function ShoeForm() {
         setColor('');
         setPictureUrl('');
         setBin('');
+        navigator("/shoes")
       } else {
         console.error(`Error: ${response.status} ${response.statusText}`);
       }

@@ -1,4 +1,6 @@
 import React, {useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 function HatForm() {
     const [fabric, setFabric] = useState('');
     const [style, setStyle] = useState('');
@@ -22,6 +24,8 @@ function HatForm() {
         fetchData();
     }, []);
 
+    const navigator = useNavigate();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -31,6 +35,7 @@ function HatForm() {
         data.color = color;
         data.picture_url = picture;
         data.location = location;
+        navigator("/hats");
 
         const hatUrl = 'http://localhost:8090/api/hats/';
         const fetchConfig = {
@@ -43,7 +48,6 @@ function HatForm() {
         const response = await fetch(hatUrl, fetchConfig);
         if (response.ok) {
             const newHat = await response.json();
-            console.log(newHat);
             setFabric('');
             setStyle('');
             setColor('');
