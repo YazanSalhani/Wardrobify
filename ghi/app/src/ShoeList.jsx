@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ShoeList() {
   const [shoes, setShoes] = useState([]);
@@ -31,10 +32,17 @@ function ShoeList() {
   useEffect(() => {
     fetchData();
   }, []);
-  
+
 return (
   <div className="col">
-    {shoes.map((shoe, idx) => {
+    {shoes.length == 0 ?
+    <>
+      <h1 className="text-center mt-5">"NO SHOES!!"</h1>
+      <p className="text-center mt-5">Click the button below to add a shoe</p>
+      <div className="text-center">
+        <Link className="text-center mt-5 btn btn-primary" to="/shoes/new">Create shoe</Link>
+      </div>
+    </> : shoes.map((shoe, idx) => {
       return (
         <div key={idx} className="card mb-3 shadow">
           <img src={shoe.picture_url} className="card-img-top" />
